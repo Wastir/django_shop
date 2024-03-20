@@ -1,0 +1,156 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product {
+    flex: 1 1 300px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333;
+    color: #fff;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 255, 0.3);
+}
+
+button:active {
+    background-color: #555;
+}
+
+.image-250 {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px; /* Zaokrąglony na rogi */
+    border: 2px solid #808080; /* Grubsza ramka, szara (#808080) */
+}
+
+.cart {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    z-index: 9999;
+}
+.cart-icon {
+    position: relative;
+    display: inline-block;
+}
+.cart-icon-image {
+    width: 50px; /* Mniejsza wartość, aby ikona była mniejsza */
+    height: 50px; /* Mniejsza wartość, aby ikona była mniejsza */
+    border-radius: 50%; /* Utwórz okrągły kształt */
+    background-color: #fff; /* Białe tło */
+    border: 2px solid #ccc; /* Ciemniejsze obramowanie */
+    cursor: pointer; /* Dodaj wskaźnik myszy */
+}
+.cart-content {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1; /* Upewnij się, że koszyk jest nad innymi elementami */
+    width: 300px; /* Dodatkowa szerokość, jeśli chcesz */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Dodaj cieniowanie */
+    display: none; /* Ukryj koszyk domyślnie */
+}
+.cart-content.show {
+    display: block; 
+}
+
+.cart-products {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+.cart-total-price {
+    font-weight: bold;
+    color:#000000
+}
+.cart-checkout {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+.cart-products li {
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cart-products li button {
+    margin-left: auto;
+}
+.cart-products li button .fas.fa-times {
+    color: red; /* Ustaw czerwony kolor ikony */
+    background-color: transparent; /* Usuń tło ikony */
+}
+.cart-count {
+    display: inline-block;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+  }
