@@ -145,7 +145,6 @@ button:active {
     background-color: transparent; /* Usuń tło ikony */
 }
 .cart-count {
-    display: inline-block;
     background-color: red;
     color: white;
     border-radius: 50%;
@@ -153,4 +152,9 @@ button:active {
     height: 25px;
     text-align: center;
     line-height: 25px;
-  }
+    visibility: hidden;
+}
+.cart-count.visible {
+    display: inline-block;
+    visibility: visible;
+}

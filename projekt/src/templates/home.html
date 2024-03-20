@@ -31,6 +31,11 @@
                     <button class="cart-checkout">Zamów</button>
                 </div>
             </div>
+            <div class="cart">
+                <div class="cart-count">
+                    <span id="cart-count">0</span>
+                </div>
+            </div>
         </div>
         </div>
     </header>
@@ -39,11 +44,7 @@
         <section class="products">
             {% for attribute in attributes %}
             <article class="product">
-                <div class="cart">
-                    <div class="cart-count">
-                        <span id="cart-count">0</span>
-                    </div>
-                </div>
+                
                 <img src="{% static 'products/' %}{{ attribute.id }}.jpg" alt="Product 1" class="image-250">
                 <p>{{ attribute.name }}</p>
                 <p>Cena: {{ attribute.price }}</p>

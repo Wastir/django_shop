@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             renderCartProducts();
             updateCartCount();
+            calculateTotalPrice();
 
             if (!cartVisible) {
                 cartContent.classList.add('show');
@@ -49,18 +50,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    function calculateTotalPrice() {
-        let totalPrice = 0;
-        productsInCart.forEach(function(product) {
-            totalPrice += product.price;
-        });
-        cartTotalPrice.textContent = `Suma: ${totalPrice}zł`;
-    }
-
     function updateCartCount() {
         const cartCount = document.getElementById('cart-count');
+        console.log(cartCount); // Dodaj to logowanie
         cartCount.textContent = productsInCart.length;
+        
+        if(productsInCart.length > 0) {
+            document.querySelector('.cart-count').classList.add('visible');
+        } else {
+            document.querySelector('.cart-count').classList.remove('visible');
+        }
     }
+
+    function calculateTotalPrice() {
+    let totalPrice = 0;
+    productsInCart.forEach(function(product) {
+        totalPrice += product.price;
+    });
+    cartTotalPrice.textContent = 'Suma: ' + totalPrice + 'zł';
+}
+
+    
 
     cartContent.addEventListener('click', function() {
         cartContent.classList.remove('show');
