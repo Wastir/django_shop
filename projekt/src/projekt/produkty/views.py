@@ -11,7 +11,8 @@ def products_view(request):
             'id': product.id,
             'name': product.name,
             'description': product.description,
-            'price': product.price
+            'price': product.price,
+            'image' : product.image,
         })
 
     return render(request, 'home.html', {'attributes': attributes})

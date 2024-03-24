@@ -11,12 +11,7 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#">Strona główna</a></li>
-                <li><a href="#">Produkty</a></li>
-            </ul>
-        </nav>
+        <h1>Sklep internetowy</h1>
         
         <div class="cart">
             <div class="cart-icon">
@@ -43,15 +38,17 @@
     <main>
         <section class="products">
             {% for attribute in attributes %}
-            <article class="product">
-                
-                <img src="{% static 'products/' %}{{ attribute.id }}.jpg" alt="Product 1" class="image-250">
-                <p>{{ attribute.name }}</p>
-                <p>Cena: {{ attribute.price }}</p>
-                <button class="add-to-cart-button" data-product-name="{{ attribute.name }}" data-product-price="{{ attribute.price }}">Dodaj do koszyka</button>
-                
-                
-            </article>
+            <div>
+                <article class="product">
+                    
+                    <img src={{attribute.image}} alt="Product" class="image-250">
+                    <p>{{ attribute.name }}</p>
+                    <p>Cena: {{ attribute.price }}</p>
+                    <button class="add-to-cart-button" data-product-name="{{ attribute.name }}" data-product-price="{{ attribute.price }}">Dodaj do koszyka</button>
+                    
+                    
+                </article>
+            </div>
             {% endfor %}
             <!-- More products go here -->
         </section>
