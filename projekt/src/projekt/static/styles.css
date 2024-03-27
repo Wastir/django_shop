@@ -158,3 +158,12 @@ button:active {
     display: inline-block;
     visibility: visible;
 }
+.logout {
+    border: 1px solid white;
+}
+.logout:hover {
+    background-color: red;
+}
+.login {
+    border: 1px solid white;
+}
