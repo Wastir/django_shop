@@ -18,25 +18,21 @@ from django.contrib import admin
 from django.urls import path, include
 
 from strony.views import home_view, about_view
-from produkty.views import products_view, product_detail
+from produkty.views import products_view, product_detail, test_email_view
 from django.conf.urls.static import static
 from django.conf import settings
 from allauth.account.views import LoginView, ConfirmEmailView, LogoutView
-
-from django.urls import path
-from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', products_view, name='home'),
     path('about/', about_view, name='about'),
     path('admin/', admin.site.urls),
     path('<int:id>', product_detail, name='product_detail'),
-    path('', include('allauth.urls')),
     path('login/', LoginView.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('accounts/', include('allauth.urls')),
-    path('account_confirm_email/', auth_views.LoginView.as_view(), name='account_email_verification_sent'),
-    path('account_confirm_email/<str:key>/', auth_views.LoginView.as_view(), name='account_confirm_email'),
+    path('accounts/account_confirm_email/<str:key>/', ConfirmEmailView.as_view(), name='account_confirm_email'),
+    path('test/', test_email_view, name='test'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

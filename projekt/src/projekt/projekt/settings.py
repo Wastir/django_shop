@@ -35,8 +35,27 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
 )
-# Application definition
+
+
 LOGIN_REDIRECT_URL = '../'
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = True
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
+ACCOUNT_EMAIL_VERIFICATION = 'madatory'
+ACCOUNT_CONFIRM_EMAIL_ON_GET = False
+ACCOUNT_ADAPTER = 'allauth.account.adapter.DefaultAccountAdapter'
+# AUTH_USER_MODEL = 'accounts.CustomUser'
+
+#Email settings
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'therafcio10pl@gmail.com'
+EMAIL_HOST_PASSWORD = 'hyoytlppcvrryyjo'
+
+# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -47,6 +66,7 @@ INSTALLED_APPS = [
 
     'produkty',
     'strony',
+    'accounts',
 
     'allauth',
     'allauth.account',
