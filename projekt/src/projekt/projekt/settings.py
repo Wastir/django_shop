@@ -37,15 +37,13 @@ AUTHENTICATION_BACKENDS = (
 )
 
 
-LOGIN_REDIRECT_URL = '../'
+LOGIN_REDIRECT_URL = 'home'
+# SIGNUP_REDIRECT_URL = 'home'
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = True
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 3
 ACCOUNT_EMAIL_VERIFICATION = 'madatory'
-ACCOUNT_CONFIRM_EMAIL_ON_GET = False
-ACCOUNT_ADAPTER = 'allauth.account.adapter.DefaultAccountAdapter'
-# AUTH_USER_MODEL = 'accounts.CustomUser'
 
 #Email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -66,8 +64,8 @@ INSTALLED_APPS = [
 
     'produkty',
     'strony',
-    'accounts',
 
+    #Django all-auth
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
