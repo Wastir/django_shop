@@ -1,2 +1,2 @@
 The project consists of an ecommerce website created in the Django framework. The website features basic functionalities such as: adding products, product pages, a shopping cart, registration and login system.
-![Main site of the project](projekt/django_shop.png)
+![Main site of the project](django_shop.png)
