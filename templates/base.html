@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sklep internetowy</title>
     {% load static %}
-    <link rel="icon" href="{% static 'django.png' %}" type="image/x-icon">
+    <link rel="icon" href="{% static 'delivery.png' %}" type="image/x-icon">
     <link rel="stylesheet" href='{% static 'styles.css' %}?{% now "U" %}'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
 </head>
 <body>
@@ -16,11 +16,11 @@
             <div class="adress-hour left-15">
                 <div class="dropdown">
                     <span><img class="location-icon" src="{% static 'location.png' %}" alt="Ikona kontaktu"></span><span class="contact-text">Znajdź sklep</span><span><img class="arrow-icon" src="{% static 'down-arrow.png' %}" alt="Ikona kontaktu"></span>
-                    <div class="dropdown-content">
+                    <div class="dropdown-content contact-info">
                         <p><a href="https://www.google.com/maps/place/Zapora+Tresna/@49.74605,19.2025206,15z/data=!4m6!3m5!1s0x47169d65fa6215a1:0x59fa98c4ef96377!8m2!3d49.7471748!4d19.2072022!16s%2Fg%2F11c52cc58q?hl=pl-PL&entry=ttu" target="_blank">ul. Przykładowa 123</a></p>
                         <p><a href="tel:+48 123 456 789">Telefon: 123-456-789</a></p>
                         <p><a href="mailto:example@example.com">mail: example@example.com</a></p>
-                        <a href="/contact/"><button class="contact-button">Znajdź sklep</button></a>
+                        <a href="{% url 'contact' %}"><button class="contact-button">Znajdź sklep</button></a>
                     </div>
                 </div>
                 <div>
@@ -35,8 +35,8 @@
                     <ul class="nav-links">
                         <li><a href="tel:+48 123 456 789">tel. 123 456 789</a></li>
                         <li><a href="{% url 'home' %}">Strona główna</a></li>
-                        <li><a href="#">O nas</a></li>
-                        <li><a href="#">Kontakt</a></li>
+                        <li><a href="{% url 'about' %}">O nas</a></li>
+                        <li><a href="{% url 'contact' %}">Kontakt</a></li>
                     </ul>
                 </nav>
             </div>
@@ -77,7 +77,7 @@
     </header>
     {% block content %} {% endblock %}
 
-<footer>
+<footer class="top">
     <p>&copy; 2022 Sklep internetowy. Wszelkie prawa zastrzeżone.</p>
 </footer>
 

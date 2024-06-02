@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from strony.views import home_view, about_view
+from strony.views import home_view, about_view, contact_view
 from produkty.views import products_view, product_detail, test_email_view
 from django.conf.urls.static import static
 from django.conf import settings
@@ -25,7 +25,8 @@ from allauth.account.views import LoginView, ConfirmEmailView, LogoutView
 
 urlpatterns = [
     path('', products_view, name='home'),
-    path('about/', about_view, name='about'),
+    path('o-nas/', about_view, name='about'),
+    path('kontakt/', contact_view, name='contact'),
     path('admin/', admin.site.urls),
     path('<int:id>', product_detail, name='product_detail'),
     path('login/', LoginView.as_view(), name='login'),

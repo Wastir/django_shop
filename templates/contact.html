@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <h1 class="width-70 top">Lokalizacja sklepu</h1>
+    <div class = "contact-container width-70">
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10312.50887943723!2d19.2025206!3d49.74605!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47169d65fa6215a1%3A0x59fa98c4ef96377!2sZapora%20Tresna!5e0!3m2!1spl!2spl!4v1717341113142!5m2!1spl!2spl" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="contact-info">
+            <h2>Django Ecommerce</h2>
+            <p><i class="fas fa-map-marker-alt"></i> Adres: <a href="https://www.google.com/maps/place/Zapora+Tresna/@49.74605,19.2025206,17z/data=!3m1!4b1!4m5!3m4!1s0x47169d65fa6215a1:0x59fa98c4ef96377!8m2!3d49.74605!4d19.2025206">ul. Przykładowa 123</a></p>
+            <p><i class="fas fa-phone"></i> Tel. <a href="tel:+48 123 456 789">+48 123 456 789</a></p>
+            <p><i class="fas fa-envelope"></i> Email: <a href="mailto:5LsZo@example.com">5LsZo@example.com</a></p>
+            <h3>Godziny otwarcia:</h3>
+            <p>Pon-Pt</p>
+            <p><strong>8:00 - 17:00</strong></p>
+            <p>Sob</p>
+            <p><strong>8:00 - 12:00</strong></p>
+        </div>
+
+    </div>
+ 
+{% endblock %}

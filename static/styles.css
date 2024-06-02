@@ -6,6 +6,11 @@ body {
     padding: 0;
 }
 
+.width-70 {
+    width: 60%;
+    margin: 0 auto;
+}
+
 .header-up {
     display: flex;
     justify-content: space-between;
@@ -20,10 +25,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #F4F4F4;
+    background-color: #b3b3b3;
     position: relative; /* Dodaj, aby koszyk mógł być absolutnie pozycjonowany wewnątrz */
     padding: 0 10px; /* Usuń górne i dolne paddingi, aby wysokość była równa */
     min-height: 80px; 
+    border-bottom:2px solid #999999;
 }
 
 .adress-hour {
@@ -79,13 +85,20 @@ body {
     display: block;
 }
 
+.nav-links li{
+    transition: transform 0.3s;
+}
+
+.nav-links li:hover {
+    transform: scale(1.2);
+}
 nav ul {
     list-style: none;
     padding: 0;
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block; /* zmiana wartości display na inline-block */
     margin: 0 10px;
 }
 
@@ -264,4 +277,68 @@ button:active {
     flex: 1; /* Dodanie flex dla pełnej szerokości */
     text-align: center; /* Dodatkowe wycentrowanie tekstu */
     height: 100%; /* Dostosowanie do wysokości rodzica */
+}
+
+.top {
+    margin-top: 50px;
+}
+
+/* Odnośniki do strony kontakt */
+
+a {
+    text-decoration: none;
+}
+
+.contact-container {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.map{
+    width: 75%;
+}
+
+
+.contact-info {
+    margin-left: 25px;
+    margin-right: 15%;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    height: 400px;
+    width: 25%;
+}
+
+.contact-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    margin: 5px 0;
+    margin-top: 20px;
+    color: #777777;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: #777777;
+}
+
+.contact-info h3 {
+    font-size: 18px;
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+
+.contact-info strong {
+    color: #000;
+}
+
+.contact-info i {
+    margin-right: 8px; /* Odstęp między ikoną a tekstem */
+    color: #0056b3; /* Kolor ikon */
 }
