@@ -4,6 +4,7 @@
     {% trans "Signup" %}
 {% endblock head_title %}
 {% block content %}
+<div class="form">
     {% element h1 %}
         {% trans "Sign Up" %}
     {% endelement %}
@@ -31,4 +32,10 @@
     {% if SOCIALACCOUNT_ENABLED %}
         {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
     {% endif %}
+</div>
+<style>
+    .header-down{
+        display: none;
+    }
+</style>
 {% endblock content %}
