@@ -289,7 +289,7 @@ a {
     text-decoration: none;
 }
 
-.contact-container {
+.nextto-container-contact {
     
     display: flex;
     align-items: center;
@@ -341,4 +341,75 @@ a {
 .contact-info i {
     margin-right: 8px; /* Odstęp między ikoną a tekstem */
     color: #0056b3; /* Kolor ikon */
+}
+
+
+/* Style dla strony o nas (about us) */
+/* Container for the sections */
+.nextto-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px auto;
+    width: 70%;
+}
+
+.nextto-container > div {
+    flex: 1;
+    padding: 10px;
+}
+
+/* Text styles */
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p.about-text, ul {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* List styles */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Custom width for sections */
+.width-70 {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* Custom styles for specific sections */
+.offer-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.offer-section img {
+    width: 250px;
+    height: 250px;
+    display: block;
+    margin: 0 auto;
+}
+
+.goal-section {
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 50px;
+}
+
+.goal-section img {
+    width: 250px;
+    height: 250px;
+    display: block;
+    margin: 0 auto;
 }

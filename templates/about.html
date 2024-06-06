@@ -1,6 +1,57 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <h1>about</h1>
+<div class="nextto-container width-70 offer-section">
+    <div>
+        <h1>O nas</h1>
+        <p class="about-text">Witaj w <b>Django ecommerce!</b></p>
+        <p>Jesteśmy dynamicznie rozwijającą się firmą, której celem jest dostarczanie naszym klientom najwyższej jakości produktów oraz wyjątkowej obsługi. Nasza przygoda zaczęła się w 2023 roku z prostym, ale ambitnym celem – stworzyć miejsce, gdzie zakupy online staną się przyjemnością.</p>
+    </div>
+    <div>
+        <img src="{% static 'about.png' %}" alt="Sklep internetowy">
+    </div>
+</div>
+
+<div class="nextto-container width-70 goal-section">
+    <div>
+        <img src="{% static 'purpose.png' %}" alt="Sklep internetowy">
+    </div>
+    <div>
+        <h1>Nasza Misja</h1>
+        <p class="about-text">W Django ecommerce wierzymy, że zakupy online powinny być proste, szybkie i przyjemne. Dlatego starannie dobieramy asortyment, dbając o różnorodność i jakość produktów, aby każdy mógł znaleźć coś dla siebie. Naszym priorytetem jest satysfakcja klientów, dlatego dokładamy wszelkich starań, aby każdy etap zakupów – od przeglądania oferty, przez realizację zamówienia, aż po dostawę – przebiegał bezproblemowo.</p>
+    </div>
+</div>
+
+<div class="nextto-container width-70 offer-section">
+    <div>
+        <h1>Nasze Wartości</h1>
+        <ul>
+            <li><b>Jakość: </b>Stawiamy na produkty od sprawdzonych dostawców, które cechuje wysoka jakość wykonania.</li>
+            <li><b>Zaufanie: </b>Zależy nam na budowaniu trwałych relacji z klientami opartych na zaufaniu i uczciwości.</li>
+            <li><b>Innowacja: </b>Stale szukamy nowych rozwiązań, które ułatwią i uprzyjemniają zakupy online.</li>
+            <li><b>Szczerość: </b>Wierzymy w transparentność – zawsze jesteśmy otwarci na opinie i sugestie naszych klientów.</li>
+        </ul>
+    </div>
+    <div>
+        <img src="{% static 'values.png' %}" alt="Sklep internetowy">
+    </div>
+</div>
+
+<div class="nextto-container width-70 goal-section">
+    <div>
+        <img src="{% static 'trust.png' %}" alt="Sklep internetowy">
+    </div>
+    <div>
+        <h1>Dlaczego warto nam zaufać?</h1>
+        <ul>
+            <li><b>Szeroka oferta: </b>Oferujemy szeroki wybór produktów z różnych kategorii, które spełniają oczekiwania nawet najbardziej wymagających klientów.</li>
+            <li><b>Bezpieczne zakupy: </b>Gwarantujemy bezpieczne metody płatności oraz ochronę danych osobowych.</li>
+            <li><b>Szybka dostawa: </b>Współpracujemy z renomowanymi firmami kurierskimi, aby zapewnić szybkie i niezawodne dostawy.</li>
+            <li><b>Profesjonalna obsługa: </b>Nasz zespół jest zawsze gotowy, aby pomóc i doradzić w każdej kwestii związanej z zakupami.</li>
+        </ul>
+    </div>
+    
+</div>
+
  
 {% endblock %}
