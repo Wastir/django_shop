@@ -10,17 +10,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     
 </head>
+{% load allauth i18n %}
 <body>
     <header>
         <div class="header-up">
             <div class="adress-hour left-15">
                 <div class="dropdown">
                     <span><img class="location-icon" src="{% static 'location.png' %}" alt="Ikona kontaktu"></span><span class="contact-text">Znajdź sklep</span><span><img class="arrow-icon" src="{% static 'down-arrow.png' %}" alt="Ikona kontaktu"></span>
-                    <div class="dropdown-content contact-info">
-                        <p><a href="https://www.google.com/maps/place/Zapora+Tresna/@49.74605,19.2025206,15z/data=!4m6!3m5!1s0x47169d65fa6215a1:0x59fa98c4ef96377!8m2!3d49.7471748!4d19.2072022!16s%2Fg%2F11c52cc58q?hl=pl-PL&entry=ttu" target="_blank">ul. Przykładowa 123</a></p>
-                        <p><a href="tel:+48 123 456 789">Telefon: 123-456-789</a></p>
-                        <p><a href="mailto:example@example.com">mail: example@example.com</a></p>
-                        <a href="{% url 'contact' %}"><button class="contact-button">Znajdź sklep</button></a>
+                    <div class="dropdown-content">
+                        <p class="logo-container"><img class="ecommerce-logo" src="{% static 'ecommerce.png' %}" alt="Sklep internetowy"></p>
+                        <div class="adress-container">
+                            <p><a href="https://www.google.com/maps/place/Zapora+Tresna/@49.74605,19.2025206,15z/data=!4m6!3m5!1s0x47169d65fa6215a1:0x59fa98c4ef96377!8m2!3d49.7471748!4d19.2072022!16s%2Fg%2F11c52cc58q?hl=pl-PL&entry=ttu" target="_blank">Adres: ul. Przykładowa 123</a></p>
+                            <p><a href="tel:+48 123 456 789">Telefon: 123-456-789</a></p>
+                            <p><a href="mailto:example@example.com">Email: example@example.com</a></p>
+                        </div>
+                        <div class="button-container">
+                            <a href="{% url 'contact' %}"><button class="contact-button">Znajdź sklep</button></a>
+                        </div>
                     </div>
                 </div>
                 <div>
@@ -46,7 +52,22 @@
                 {% if user.is_authenticated %}
                 <div class="user-info">
                     <p> Witaj {{ user.username }}</p>
-                    <a href="/logout/"><button class="logout">Wyloguj</button></a>
+                    {% url 'account_logout' as action_url %}
+                    {% element form method="post" action=action_url no_visible_fields=True %}
+                        {% slot body %}
+                            {% csrf_token %}
+                            {% if redirect_field_value %}
+                                <input type="hidden"
+                                    name="{{ redirect_field_name }}"
+                                    value="{{ redirect_field_value }}" />
+                            {% endif %}
+                        {% endslot %}
+                        {% slot actions %}
+                            {% element button type="submit" class="logout" %}
+                                {% trans 'Sign Out' %}
+                            {% endelement %}
+                        {% endslot %}
+                    {% endelement %}
                 </div>
                 {% else %}
                 <div class="user-info">
